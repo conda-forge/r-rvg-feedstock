@@ -1,4 +1,4 @@
-{% set version = '0.2.0' %}
+{% set version = '0.2.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rvg_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rvg/rvg_{{ version }}.tar.gz
-  sha256: 21204bdbf2a6695fc557af1c4a49a514138cce08a3ddaeb22ddbc688daccacfd
+  sha256: 17d166ea71db3bd0763179453cfa31a87ee759be8aa22e89227fc7cc35c5c148
 
 build:
   merge_build_host: True  # [win]
@@ -21,9 +21,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
-    - {{native}}toolchain        # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
@@ -33,14 +34,16 @@ requirements:
     - r-base
     - r-rcpp >=0.12.12
     - r-gdtools >=0.1.6
-    - r-officer >=0.2.0
+    - r-officer >=0.3.5
+    - r-rlang
     - r-xml2 >=1.0.0
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-rcpp >=0.12.12
     - r-gdtools >=0.1.6
-    - r-officer >=0.2.0
+    - r-officer >=0.3.5
+    - r-rlang
     - r-xml2 >=1.0.0
 
 test:
@@ -64,20 +67,21 @@ extra:
 # Package: rvg
 # Type: Package
 # Title: R Graphics Devices for Vector Graphics Output
-# Version: 0.2.0
+# Version: 0.2.1
 # Authors@R: c( person("David", "Gohel", role = c("aut", "cre"), email = "david.gohel@ardata.fr"), person("Bob", "Rudis", role = c("ctb"), comment = "the javascript code used by function set_attr"), person("Francois", "Brunetti", role = c("ctb"), email = "francois.brunetti@lysis-consultants.fr", comment = "clipping algorithms") )
 # Description: Vector Graphics devices for Microsoft  PowerPoint and Excel. Functions extending package 'officer' are provided to  embed 'DrawingML' graphics into 'Microsoft PowerPoint' presentations and  'Microsoft Excel' workbooks.
 # License: GPL-3
+# Encoding: UTF-8
 # Depends: R (>= 3.0)
-# Imports: grDevices, Rcpp (>= 0.12.12), officer (>= 0.2.0), gdtools (>= 0.1.6), xml2 (>= 1.0.0)
+# Imports: grDevices, Rcpp (>= 0.12.12), officer (>= 0.3.5), gdtools (>= 0.1.6), xml2 (>= 1.0.0), rlang
 # LinkingTo: Rcpp, gdtools
 # Suggests: htmltools, testthat, covr, grid
 # URL: https://github.com/davidgohel/rvg
 # BugReports: https://github.com/davidgohel/rvg/issues
 # RoxygenNote: 6.1.1
 # NeedsCompilation: yes
-# Packaged: 2019-04-06 08:00:37 UTC; davidgohel
+# Packaged: 2019-06-24 22:50:51 UTC; davidgohel
 # Author: David Gohel [aut, cre], Bob Rudis [ctb] (the javascript code used by function set_attr), Francois Brunetti [ctb] (clipping algorithms)
 # Maintainer: David Gohel <david.gohel@ardata.fr>
 # Repository: CRAN
-# Date/Publication: 2019-04-06 08:40:03 UTC
+# Date/Publication: 2019-06-25 09:30:03 UTC
