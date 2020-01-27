@@ -1,4 +1,4 @@
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rvg_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rvg/rvg_{{ version }}.tar.gz
-  sha256: 2d539dbb094c890f6ef26af1822bf5109a7d6c8ecd370d6159cfcdec9092e438
+  sha256: f5311b1c70c5340d1f7a2bf30cc9b898e68c97caa07b98a8db0e6f802c9758df
 
 build:
   merge_build_host: True  # [win]
