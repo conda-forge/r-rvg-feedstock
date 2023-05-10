@@ -10,7 +10,7 @@ Home: https://github.com/davidgohel/rvg
 
 Package license: GPL-3.0-only
 
-Summary: Vector Graphics devices for Microsoft  PowerPoint and Excel. Functions extending package 'officer' are provided to  embed 'DrawingML' graphics into 'Microsoft PowerPoint' presentations and  'Microsoft Excel' workbooks.
+Summary: Vector Graphics devices for Microsoft PowerPoint and Excel. Functions extending package 'officer' are provided to  embed 'DrawingML' graphics into 'Microsoft PowerPoint' presentations and  'Microsoft Excel' workbooks.
 About r-rvg
 -----------
 
@@ -18,7 +18,7 @@ Home: https://github.com/davidgohel/rvg
 
 Package license: GPL-3.0-only
 
-Summary: Vector Graphics devices for Microsoft  PowerPoint and Excel. Functions extending package 'officer' are provided to  embed 'DrawingML' graphics into 'Microsoft PowerPoint' presentations and  'Microsoft Excel' workbooks.
+Summary: Vector Graphics devices for Microsoft PowerPoint and Excel. Functions extending package 'officer' are provided to  embed 'DrawingML' graphics into 'Microsoft PowerPoint' presentations and  'Microsoft Excel' workbooks.
 
 Current build status
 ====================
