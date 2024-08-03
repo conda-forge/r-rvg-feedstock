@@ -1,6 +1,5 @@
 {% set version = "0.3.3" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-rvg
@@ -13,8 +12,7 @@ source:
   sha256: 15c8157ae2383c9452988b31420648be5bc8b4d0e5181be66c65e73262743d55
 
 build:
-  merge_build_host: true  # [win]
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +20,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -40,7 +40,6 @@ requirements:
     - libpng
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-rcpp >=0.12.12
     - r-gdtools >=0.3.3
     - r-officer >=0.6.2
