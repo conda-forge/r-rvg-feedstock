@@ -42,6 +42,7 @@ requirements:
     - r-rlang
     - r-xml2 >=1.0.0
     - libpng
+    - zlib
   run:
     - r-base
     - r-rcpp >=0.12.12
