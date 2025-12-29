@@ -43,7 +43,7 @@ requirements:
     - r-systemfonts
     - r-xml2 >=1.0.0
     - libpng
-    - zlib                        # [linux]
+    - zlib
   run:
     - r-base
     - r-rcpp >=0.12.12
