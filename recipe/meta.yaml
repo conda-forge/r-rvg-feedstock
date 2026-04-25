@@ -1,4 +1,4 @@
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rvg_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rvg/rvg_{{ version }}.tar.gz
-  sha256: c87dffc7ecf628b839b470d25b7b4463699c259fc19694284f6f855483a5817e
+  sha256: 5402796df3ec35de2752471637436be8ad26b49b9aff8691040f009955728de9
 
 build:
   number: 0
